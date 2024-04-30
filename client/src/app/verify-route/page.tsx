@@ -11,10 +11,14 @@ const CourseForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/submit-course', {
+      const response = await fetch(`http://localhost:5000/Verify-certificate/${certId}`, {
       });
       const data = await response.json();
-      console.log(data);
+      if (data._id === certId) {
+        console.log("Certificate is valid")
+      } else {
+        console.log("Certificate is invalid")
+      }
       // Handle successful submission
     } catch (error) {
       console.error('Error submitting form:', error);

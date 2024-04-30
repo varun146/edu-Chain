@@ -47,7 +47,7 @@ app.post("/issue-certificate", async (req, res) => {
     });
 
     await certificate.save();
-    res.status(201).json({ message: "Certificate issued successfully" });
+    res.status(201).json(certificate);
   } catch (err) {
     console.error("Error issuing certificate:", err);
     res.status(500).json({ error: "An internal server error occurred" });

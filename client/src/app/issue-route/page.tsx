@@ -33,7 +33,7 @@ const CourseForm = () => {
         body: JSON.stringify(formData),
       });
       const data = await response.json();
-      console.log(data);
+      console.log("here is certificate id: ", data._id);
       // Handle successful submission
     } catch (error) {
       console.error('Error submitting form:', error);
